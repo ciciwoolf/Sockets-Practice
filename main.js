@@ -14,10 +14,12 @@ var io = require('socket.io')(server);
     io.on('connection', function(socket) {
         console.log('Someone is connected');
         
+        //receives the 'new-message' and its contents. Use a function to print contents to console.
         socket.on('new-message', function(data) {
             console.log(data);
-            
-            io.emit('new-message', data); //this sends back to frontend
+    
+        //this sends the contents of message back to frontend
+     io.emit('new-message', data);
 
           });
         });
