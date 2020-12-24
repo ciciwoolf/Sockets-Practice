@@ -19,14 +19,29 @@ socket.on('new-message', function(data){
 
    });
 
-    //this event listener isn't doing anything
-   document.getElementById("Sent").addEventListener("click", function render (data) {
+   
+   //1. Create variable which links variable to html element
+   const sentEvent = document.getElementById("Sent");
+  
+  
+   //2. Create a function that occurs in the event handler function
+   function render (data) { 
+       console.log ("Rendering yet?", data);       
+    var html = `<div> <strong>${data.author}:</strong> ${data.text}</div>`;  
+    console.log(html);
+    return document.getElementById('messages').innerHTML = html;
     
-    var html = `<div> <strong>${data.author}:</strong> ${data.text}</div>`;      
+   }
 
-    document.getElementById('messages').innerHTML = html;
+   //3. Create event handler using above 1 and 2
+   sentEvent.onclick = render; 
 
-   });
+
+
+ 
+   
+   
+ 
 
 
 
