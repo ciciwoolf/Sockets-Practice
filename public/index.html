@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Mi Aplicación con Sockets</title>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="main.js"></script>
+
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,13 +22,16 @@
 </head>
 <body>
   <h1>A Stellar Socket.IO App</h1>
-  <div id="messages"></div>
+  <div id="messages">
+    <ul class="chat"></ul>
+  </div>
       <br/>
       <form class="form" onsubmit="return addMessage(this)">
         <input type="text" id="username" placeholder="Name">
         <input type="text" id="text" placeholder="Message">
         <button class="btn" type="submit" id="Sent">Submit</button>
       </form>
+      <script src="main.js"></script>
 </body>
 </html>
 
