@@ -25,7 +25,7 @@ var io = require('socket.io')(server);
           });
         });
 
-        server.listen(80, function() {
+        server.listen(process.env.PORT, function() {
             console.log("Server running and hello world");
         });
     
