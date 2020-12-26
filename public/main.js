@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:8083', {'forceNew': true })
+var socket = io.connect('/', {'forceNew': true })
 const ul = document.querySelector('.chat');
 const username = document.getElementById('username');
 const message = document.getElementById('text');
@@ -23,14 +23,3 @@ socket.on('new-message', function(data){
     username.value = '';
     message.value = '';
    });
-
-
-
-
- 
-   
-   
- 
-
-
-

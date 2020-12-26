@@ -1,11 +1,12 @@
 var express = require('express');
+// const serverless = require('serverless-http');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
     app.use(express.static('public'));
 
-    app.get('/', function(req,res){
+    app.get('', function(req,res){
 
     res.status(200).send('Hola Mundo');
     })
@@ -24,6 +25,7 @@ var io = require('socket.io')(server);
           });
         });
 
-server.listen(8083, function() {
-    console.log("Server running and hello world");
-})
+        server.listen(80, function() {
+            console.log("Server running and hello world");
+        });
+    
